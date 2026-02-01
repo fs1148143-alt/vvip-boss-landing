@@ -1,0 +1,74 @@
+body {
+  background-color: #ffffff; /* Pure White Background */
+  color: #000000; /* Sharp Black Text */
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.compact-section {
+  min-height: 60vh; /* Scroll kam karne ke liye gap kam kiya */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #001f3f;
+}
+
+.blue-divider {
+  width: 80px;
+  height: 4px;
+  background: #0077ff;
+  margin: 10px 0;
+}
+
+.grid-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.info-card {
+  flex: 1;
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.info-card:hover {
+  border-color: #0077ff;
+  transform: translateY(-10px); /* Smooth Lift */
+}
+
+.number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #0077ff;
+}
+
+.boss-action-btn {
+  background: #000;
+  color: #fff;
+  padding: 20px 60px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.boss-action-btn:hover {
+  background: #0077ff;
+  transform: scale(1.05);
+}
