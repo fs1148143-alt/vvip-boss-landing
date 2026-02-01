@@ -1,55 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VVIP BOSS | Expert</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="bg-animation"></div>
+<div class="feature-card">
+            <h2 style="color:#d4af37; margin-bottom: 10px;">VIP LIFETIME COURSE</h2>
+            <p>Main koi 'Tip' nahi dunga, balki wo 8 Tricks aur 7 Formule sikhaunga jo main 12 saal se use kar raha hoon.</p>
+            <ul>
+                <li>4 Kalyan Lifetime Tricks</li>
+                <li>2 Main Bazar Special Tricks</li>
+                <li>2 All-Market Tricks</li>
+            </ul>
+        </div>
 
-    <section class="hero">
-        <h1 class="glow-text">VVIP BOSS</h1>
-        <p class="subtitle">100% LOSS COVER | 15 YEARS RECORD</p>
-    </section>
+        <div class="video-wrapper">
+            <iframe width="100%" height="250" src="https://www.youtube.com/embed/D4QtfkV1nR4" frameborder="0" allowfullscreen></iframe>
+        </div>
 
-    <div class="main-container">
-        <section class="info-grid">
-            <div class="glass-card">
-                <h2>8 LIFETIME TRICKS</h2>
-                <p>4 Kalyan | 2 Main Bazar | 2 All Market</p>
+        <div class="script-box" style="border-left-color: #fff;">
+            <p>Is course ke baad na kisi ki membership leni hai, na charts dekhne hain. Aap khud <b>Master</b> banenge.</p>
+        </div>
+
+        <h3 style="color:#d4af37; margin: 20px 0;">SUCCESS FEEDBACK</h3>
+        
+        <div class="slider-container">
+            <div class="slider-track" id="slider">
+                <img src="1000003964.jpg" onerror="this.src='https://via.placeholder.com/280x480?text=Feedback+1'">
+                <img src="1000003961.jpg" onerror="this.src='https://via.placeholder.com/280x480?text=Feedback+2'">
+                <img src="1000003963.jpg" onerror="this.src='https://via.placeholder.com/280x480?text=Feedback+3'">
+                <img src="1000003966.jpg" onerror="this.src='https://via.placeholder.com/280x480?text=Feedback+4'">
+                <img src="1000003962.jpg" onerror="this.src='https://via.placeholder.com/280x480?text=Feedback+5'">
             </div>
-            <div class="glass-card">
-                <h2>7 FORMULAE</h2>
-                <p>Single Open Ank | Daily Pass Guarantee</p>
-            </div>
-        </section>
+        </div>
 
-        <section class="video-box">
-            <div class="frame-header">STRATEGY VIDEO</div>
-            <iframe src="https://www.youtube.com/embed/D4QtfkV1nR4" frameborder="0" allowfullscreen></iframe>
-        </section>
-
-        <section class="feedback-container">
-            <div class="frame-header">VVIP FEEDBACK</div>
-            <div class="slider-frame">
-                <div class="slides" id="slider">
-                    <img src="1000003964.jpg">
-                    <img src="1000003961.jpg">
-                    <img src="1000003963.jpg">
-                    <img src="1000003966.jpg">
-                    <img src="1000003962.jpg">
-                </div>
-            </div>
-        </section>
+        <p style="margin-bottom: 100px; font-size: 0.8rem; color: #888;">Ek-ek karke results dekhein...</p>
     </div>
 
-    <a href="https://wa.me/918237159087" class="wa-footer">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="20"> Chat with VVIP BOSS
+    <a href="https://wa.me/918237159087" class="footer-btn">
+        SEEKHO AUR JEETO - JOIN NOW
     </a>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth Slider Logic
+        let step = 0;
+        const sliderTrack = document.getElementById('slider');
+        
+        function moveSlider() {
+            step++;
+            if (step >= 5) { step = 0; }
+            sliderTrack.style.transform = translateX(-${step * 20}%);
+        }
+
+        setInterval(moveSlider, 3500); // 3.5 seconds per slide
+    </script>
 </body>
-        </html>
+</html>
