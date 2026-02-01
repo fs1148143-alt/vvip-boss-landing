@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: #050505;
@@ -7,9 +7,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Shiny Text Effect */
+/* Shiny Animation */
 .shiny-text {
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 900;
     text-transform: uppercase;
     background: linear-gradient(90deg, #00ff00, #fff, #00ff00);
@@ -17,6 +17,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 3s linear infinite;
+    text-align: center;
 }
 
 @keyframes shine {
@@ -29,14 +30,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background: radial-gradient(circle, #00ff0022 0%, #000 70%);
+    background: radial-gradient(circle, #00ff0011 0%, #000 80%);
 }
 
 .details {
     padding: 50px 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
@@ -45,21 +45,35 @@ body {
     padding: 30px;
     border-radius: 20px;
     border: 1px solid #00ff0033;
-    transition: 0.5s;
+    text-align: center;
 }
 
-.card:hover {
-    border-color: #00ff00;
-    box-shadow: 0 0 20px #00ff0044;
-}
+.video-section { padding: 50px 0; text-align: center; }
 
 .video-container {
-    width: 95%;
-    max-width: 800px;
-    margin: 50px auto;
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    border: 2px solid #00ff00;
     border-radius: 15px;
     overflow: hidden;
-    border: 2px solid #00ff00;
+}
+
+/* Auto-Slider CSS */
+.scroll-x {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 30px;
+    scrollbar-width: none;
+}
+.scroll-x::-webkit-scrollbar { display: none; }
+
+.feedback-img {
+    width: 250px;
+    border-radius: 15px;
+    border: 1px solid #00ff00;
+    flex-shrink: 0;
 }
 
 .whatsapp-btn {
@@ -69,16 +83,17 @@ body {
     transform: translateX(-50%);
     background: #25d366;
     color: white;
-    padding: 15px 30px;
+    padding: 18px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
     width: 90%;
     max-width: 400px;
     text-align: center;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
 }
 
-/* Scroll Animation */
-.hidden { opacity: 0; transform: translateY(30px); transition: 1s; }
+/* Scroll Fade Effect */
+.hidden { opacity: 0; transform: translateY(40px); transition: 1s; }
 .show { opacity: 1; transform: translateY(0); }
