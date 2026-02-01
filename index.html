@@ -1,66 +1,35 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VVIP BOSS | Calculation Master</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="bg-glow"></div>
-
-    <header>
-        <h1 class="gold-text">VVIP BOSS</h1>
-        <p class="tagline">Kismat Nahi, Calculation Se Jeeto!</p>
-    </header>
-
-    <main class="container">
-        <section class="intro-section">
-            <p>Matka Market mein log kismat ke bharose bethte hain, isliye 90% log fail hote hain. Lekin ye market kismat se nahi, <strong>Calculation</strong> se chalta hai.</p>
-        </section>
-
-        <section class="course-box">
-            <h2 class="section-title">VIP LIFETIME COURSE</h2>
-            <p>Isme main aapko wo tricks aur formule sikhaunga jo main 12 saal se use kar raha hoon:</p>
-            <ul class="tricks-list">
-                <li><span>4</span> Kalyan Lifetime Tricks</li>
-                <li><span>2</span> Main Bazar Special Tricks</li>
-                <li><span>2</span> Ank Wale Sare Bazaar ki Tricks</li>
-                <li><span>7</span> Single Open Ank Formule</li>
-            </ul>
-        </section>
-
-        <section class="video-container">
-            <h3 class="gold-label">MASTER STRATEGY VIDEO</h3>
-            <div class="video-frame">
-                <iframe src="https://www.youtube.com/embed/D4QtfkV1nR4" frameborder="0" allowfullscreen></iframe>
+<h3 style="color:#d4af37; margin-top: 30px;">SUCCESS FEEDBACK</h3>
+        <div class="slider-box">
+            <div class="slider-track" id="slider">
+                <img src="1000003964.jpg">
+                <img src="1000003961.jpg">
+                <img src="1000003963.jpg">
+                <img src="1000003966.jpg">
+                <img src="1000003962.jpg">
             </div>
-        </section>
-
-        <section class="master-note">
-            <p>Is course ke baad aap khud apna game nikalna seekhenge... <strong>Ek Master Ki Tarah.</strong></p>
-        </section>
-
-        <section class="feedback-section">
-            <h3 class="gold-label">SUCCESS FEEDBACK</h3>
-            <div class="slider-box">
-                <div class="slider-track" id="slider">
-                    <img src="1000003964.jpg">
-                    <img src="1000003961.jpg">
-                    <img src="1000003963.jpg">
-                    <img src="1000003966.jpg">
-                    <img src="1000003962.jpg">
-                </div>
-            </div>
-            <p class="slide-hint">Next result in 3 seconds...</p>
-        </section>
-    </main>
+        </div>
+        <p style="font-size: 0.7rem; color: #777;">Slide ho raha hai, wait karein...</p>
+    </div>
 
     <footer class="whatsapp-footer">
-        <a href="https://wa.me/918237159087">SEEKHO AUR JEETO - JOIN NOW</a>
+        <a href="https://wa.me/918237159087">JOIN NOW - VVIP BOSS</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Animations aur Slider yahi par hai
+        let current = 0;
+        const track = document.getElementById('slider');
+        
+        function startSliding() {
+            current++;
+            if (current >= 5) {
+                current = 0;
+            }
+            track.style.transform = translateX(-${current * 20}%);
+        }
+
+        // Har 3 second mein slide badlega
+        setInterval(startSliding, 3000);
+    </script>
 </body>
 </html>
