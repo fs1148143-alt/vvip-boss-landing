@@ -1,13 +1,17 @@
-let current = 0;
-const track = document.getElementById('slider');
-const total = 5;
+document.addEventListener('DOMContentLoaded', () => {
+    let index = 0;
+    const track = document.getElementById('slider');
+    const totalSlides = 5;
 
-function slide() {
-    current++;
-    if (current >= total) {
-        current = 0;
+    function nextSlide() {
+        index++;
+        if (index >= totalSlides) {
+            index = 0;
+        }
+        // Smooth sliding effect
+        track.style.transform = translateX(-${index * 20}%);
     }
-    track.style.transform = translateX(-${current * 20}%);
-}
 
-setInterval(slide, 3500);
+    // Har 3.5 second mein feedback automatically badlega
+    setInterval(nextSlide, 3500);
+});
