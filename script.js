@@ -1,24 +1,20 @@
-gsap.registerPlugin(ScrollTrigger);
+// Jab user scroll karega tab cards aur video dheere se dikhenge
+window.addEventListener('scroll', reveal);
 
-// Initial Entry
-gsap.from(".reveal-text", {
-  y: 50,
-  opacity: 0,
-  duration: 1.5,
-  stagger: 0.3,
-  ease: "power4.out"
-});
+function reveal() {
+    // Hum un saari cheezon ko pakdenge jinhe animate karna hai
+    var reveals = document.querySelectorAll('.card, .video-wrapper, .ss-box');
 
-// Scroll animations for other elements
-gsap.utils.toArray(".reveal").forEach((elem) => {
-  gsap.from(elem, {
-    scrollTrigger: {
-      trigger: elem,
-      start: "top 90%",
-    },
-    y: 30,
-    opacity: 0,
-    duration: 1,
-    ease: "power2.out"
-  });
-});
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100; // Kitna scroll karne par dikhe
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
+    }
+}
+
+// Page load hote hi ek baar check karein
+reveal();
