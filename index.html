@@ -1,35 +1,65 @@
-<h3 style="color:#d4af37; margin-top: 30px;">SUCCESS FEEDBACK</h3>
-        <div class="slider-box">
-            <div class="slider-track" id="slider">
-                <img src="1000003964.jpg">
-                <img src="1000003961.jpg">
-                <img src="1000003963.jpg">
-                <img src="1000003966.jpg">
-                <img src="1000003962.jpg">
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVIP BOSS | Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <header>
+            <h1 class="gold-text">VVIP BOSS</h1>
+            <p class="tagline">CALCULATION MASTER</p>
+        </header>
+
+        <section class="card">
+            <p>Matka Market kismat se nahi, <b>Calculation</b> se chalta hai. Isliye 90% log fail hote hain.</p>
+        </section>
+
+        <section class="card gold-border">
+            <h2 class="title">VIP LIFETIME COURSE</h2>
+            <ul class="tricks">
+                <li><span>4</span> Kalyan Lifetime Tricks</li>
+                <li><span>2</span> Main Bazar Special Tricks</li>
+                <li><span>2</span> Ank Wale Sare Bazaar ki Tricks</li>
+                <li><span>7</span> Single Open Ank Formule</li>
+            </ul>
+        </section>
+
+        <section class="video-container">
+            <h3 class="label">STRATEGY VIDEO</h3>
+            <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/D4QtfkV1nR4" frameborder="0" allowfullscreen></iframe>
             </div>
-        </div>
-        <p style="font-size: 0.7rem; color: #777;">Slide ho raha hai, wait karein...</p>
+        </section>
+
+        <section class="card">
+            <p>Is course ke baad aap khud apna game nikalna seekhenge... <b>Ek Master Ki Tarah.</b></p>
+        </section>
+
+        <section class="feedback-area">
+            <h3 class="label">SUCCESS FEEDBACK</h3>
+            <div class="slider-box">
+                <div class="slider-track" id="slider">
+                    <img src="1000003964.jpg">
+                    <img src="1000003961.jpg">
+                    <img src="1000003963.jpg">
+                    <img src="1000003966.jpg">
+                    <img src="1000003962.jpg">
+                </div>
+            </div>
+            <p class="hint">Wait 3 seconds for next result...</p>
+        </section>
     </div>
 
-    <footer class="whatsapp-footer">
-        <a href="https://wa.me/918237159087">JOIN NOW - VVIP BOSS</a>
+    <footer>
+        <a href="https://wa.me/918237159087" class="wa-btn">JOIN NOW - WHATSAPP</a>
     </footer>
 
-    <script>
-        // Animations aur Slider yahi par hai
-        let current = 0;
-        const track = document.getElementById('slider');
-        
-        function startSliding() {
-            current++;
-            if (current >= 5) {
-                current = 0;
-            }
-            track.style.transform = translateX(-${current * 20}%);
-        }
-
-        // Har 3 second mein slide badlega
-        setInterval(startSliding, 3000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
