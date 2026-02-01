@@ -1,25 +1,14 @@
-// 1. Scroll Reveal Animation
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, { threshold: 0.1 });
+let currentSlide = 0;
+const slider = document.getElementById('slider');
+const totalSlides = document.querySelectorAll('.slides img').length;
 
-document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
-
-// 2. Auto-Sliding Logic
-const slider = document.getElementById('feedback-slider');
-function autoScroll() {
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-        slider.scrollLeft = 0;
-    } else {
-        slider.scrollLeft += 1;
+function nextSlide() {
+    currentSlide++;
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
     }
+    slider.style.transform = translateX(-${currentSlide * 100}%);
 }
-let scrollInterval = setInterval(autoScroll, 20);
 
-// Stop on touch
-slider.addEventListener('touchstart', () => clearInterval(scrollInterval));
-slider.addEventListener('touchend', () => scrollInterval = setInterval(autoScroll, 20));
+// Har 3 second mein ek image slide hogi
+setInterval(nextSlide, 3000);
