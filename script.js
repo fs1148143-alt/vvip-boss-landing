@@ -10,5 +10,4 @@ function slide() {
     track.style.transform = translateX(-${current * 20}%);
 }
 
-// Har 3.5 second mein feedback badlega
 setInterval(slide, 3500);
