@@ -1,38 +1,40 @@
 html { scroll-behavior: smooth; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; text-align: center; overflow-x: hidden; }
+body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; text-align: center; overflow-x: hidden; line-height: 1.6; }
+
 .bg-glow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 10%, #302801 0%, #000 85%); z-index: -1; }
-.container { width: 92%; max-width: 480px; margin: auto; padding-bottom: 120px; }
-.gold-text { font-family: 'Orbitron', sans-serif; font-size: 2.8rem; color: #d4af37; text-shadow: 0 0 25px #d4af37; margin-top: 40px; }
-.tagline { color: #888; font-size: 0.7rem; letter-spacing: 5px; margin-bottom: 30px; }
-.card { padding: 22px; border-radius: 20px; margin: 25px 0; text-align: left; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.1); }
-.gold-border { border: 2px solid #d4af37; background: #0a0a0a; }
-.section-title { color: #d4af37; font-size: 1.3rem; margin-bottom: 15px; text-align: center; }
+
+.container { width: 92%; max-width: 500px; margin: auto; padding-bottom: 140px; }
+
+/* Website Entrance Animation */
+.main-animation { animation: slideUp 1s ease-out; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+.gold-text { font-family: 'Orbitron', sans-serif; font-size: 2.8rem; color: #d4af37; text-shadow: 0 0 20px #d4af37; margin-top: 50px; }
+.tagline { color: #888; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 40px; }
+
+/* Sections ke beech gap */
+.section-gap { margin-bottom: 40px !important; }
+
+.card { padding: 25px; border-radius: 20px; text-align: left; }
+.glass { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.1); }
+.gold-border { border: 2px solid #d4af37; background: #0a0a0a; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+.section-title { color: #d4af37; font-size: 1.4rem; margin-bottom: 15px; text-align: center; }
+.sub-text { font-size: 0.9rem; color: #bbb; margin-bottom: 25px; text-align: center; }
+
 .tricks-list { list-style: none; }
-.tricks-list li { margin-bottom: 15px; font-size: 0.9rem; display: flex; align-items: center; }
-.bullet { background: #d4af37; color: #000; min-width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; border-radius: 5px; font-weight: 900; margin-right: 12px; }
-.video-frame { width: 100%; aspect-ratio: 16/9; border: 3px solid #d4af37; border-radius: 15px; overflow: hidden; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-.slider-box { width: 260px; height: 380px; margin: 15px auto; border: 4px solid #fff; border-radius: 20px; overflow: hidden; background: #111; }
+.tricks-list li { margin-bottom: 18px; font-size: 1rem; display: flex; align-items: flex-start; }
+.bullet { background: #d4af37; color: #000; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: 900; margin-right: 15px; }
+
+/* Video Frame Improvement */
+.video-frame { width: 100%; aspect-ratio: 16/9; border: 3px solid #d4af37; border-radius: 15px; overflow: hidden; background: #000; }
+.video-frame iframe { width: 100%; height: 100%; display: block; }
+
+/* Slider Styling */
+.slider-box { width: 280px; height: 420px; margin: 20px auto; border: 5px solid #fff; border-radius: 20px; overflow: hidden; position: relative; }
 .slider-track { display: flex; width: 500%; height: 100%; transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
 .slider-track img { width: 20%; height: 100%; object-fit: contain; background: #000; }
-footer { position: fixed; bottom: 0; width: 100%; background: #d4af37; padding: 20px; z-index: 1000; }
-.wa-btn { text-decoration: none; color: #000; font-weight: 900; font-size: 1.2rem; display: block; }
-/* Website khulte hi upar se niche aane wala animation */
-.container {
-    animation: fadeInPage 1.2s ease-out;
-}
 
-@keyframes fadeInPage {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Gold text chamakne wala animation */
-.gold-text {
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px #d4af37; }
-    to { text-shadow: 0 0 25px #f1d56e, 0 0 35px #d4af37; }
-             }
+footer { position: fixed; bottom: 0; width: 100%; background: #d4af37; padding: 22px; z-index: 1000; box-shadow: 0 -5px 20px rgba(0,0,0,0.5); }
+.wa-btn { text-decoration: none; color: #000; font-weight: 900; font-size: 1.3rem; display: block; letter-spacing: 1px; }
