@@ -1,55 +1,46 @@
-<p style="letter-spacing: 5px; color: #888;">ULTRA PREMIUM FITNESS</p>
-        </div>
-        
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRON EMPIRE | Ultra Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero">
+        <h1 class="glow-text">IRON EMPIRE</h1>
+        <p class="tagline">ULTRA PREMIUM 4K STUDIO</p>
         <div class="floating-icon">🏋️‍♂️</div>
-        
-        <a href="#join" class="glow-btn animateanimated animatefadeInUp">Enter The Beast Mode</a>
+        <a href="#explore" class="gold-btn">EXPLORE ELITE</a>
     </section>
 
-    <div class="divider">一一一🔘一一一</div>
-
-    <section class="section" id="features">
-        <div class="feature-card" id="card1">
-            <div class="icon-circle">💪</div>
-            <h2 style="color: var(--gold); margin-bottom: 15px;">ADVANCED WEIGHTS</h2>
-            <p>High-quality Olympic plates aur custom dumbbells jo sirf premium gyms mein hote hain.</p>
+    <div id="explore" class="container">
+        <div class="premium-card reveal">
+            <div class="icon-circle">🦾</div>
+            <h2>CUSTOM WEIGHTS</h2>
+            <p>Specialized Olympic Plates aur Custom Dumbbells jo performance ko double kar denge.</p>
         </div>
 
-        <div class="feature-card" id="card2">
-            <div class="icon-circle">🛡️</div>
-            <h2 style="color: var(--gold); margin-bottom: 15px;">ELITE COACHING</h2>
-            <p>Aapke har ek movement par focus. No distraction, only results.</p>
+        <div class="premium-card reveal">
+            <div class="icon-circle">🎖️</div>
+            <h2>ELITE COACHING</h2>
+            <p>Har rep par focus. Science-based training jo result ki guarantee deti hai.</p>
         </div>
 
-        <div class="feature-card" id="card3">
-            <div class="icon-circle">🔥</div>
-            <h2 style="color: var(--gold); margin-bottom: 15px;">4K AMBIANCE</h2>
-            <p>World-class lighting aur atmosphere jo aapko motivate karega.</p>
+        <div class="premium-card reveal">
+            <div class="icon-circle">⚡</div>
+            <h2>4K AMBIANCE</h2>
+            <p>Premium lighting aur futuristic vibes jo aapko motivate karengi.</p>
         </div>
-    </section>
 
-    <footer id="join" class="section">
-        <div class="divider">一一一⚪一一一</div>
-        <h2 style="font-size: 2rem; margin-bottom: 30px;">READY TO TRANSFORM?</h2>
-        <a href="https://wa.me/918237159087" class="glow-btn">BOOK A SESSION</a>
-        <p style="margin-top: 50px; color: #444;">&copy; 2026 IRON EMPIRE LUXURY STUDIO</p>
-    </footer>
+        <footer class="reveal">
+            <a href="https://wa.me/918237159087" class="gold-btn">JOIN THE EMPIRE</a>
+            <p style="margin-top: 40px; color: #444;">&copy; 2026 IRON EMPIRE LUXURY</p>
+        </footer>
+    </div>
 
-    <script>
-        // Scroll Animation Logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    entry.target.classList.add('animate__animated');
-                    entry.target.classList.add('animate__fadeInUp');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.feature-card').forEach((card) => {
-            observer.observe(card);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
