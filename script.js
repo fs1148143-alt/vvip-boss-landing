@@ -1,14 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let current = 0;
+window.onload = function() {
     const track = document.getElementById('slider');
-    const totalSlides = 5;
+    let current = 0;
+    const totalSlides = 5; // Kyunki aapki 5 images hain
 
     function autoSlide() {
-        current = (current + 1) % totalSlides;
-        // 20% shift for 5 images (100 / 5 = 20)
-        track.style.transform = translateX(-${current * 20}%);
+        current++;
+        if (current >= totalSlides) {
+            current = 0;
+        }
+        // Har slide 20% move hogi (100% / 5 images = 20%)
+        track.style.transition = "transform 0.8s ease-in-out";
+        track.style.transform = "translateX(-" + (current * 20) + "%)";
     }
 
-    // Har 3 second mein slide badlega
+    // Har 3 second (3000ms) mein slide badlega
     setInterval(autoSlide, 3000);
-});
+};
