@@ -1,17 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let index = 0;
+    let current = 0;
     const track = document.getElementById('slider');
-    const totalSlides = 5;
-
-    function nextSlide() {
-        index++;
-        if (index >= totalSlides) {
-            index = 0;
-        }
-        // Smooth sliding effect
-        track.style.transform = translateX(-${index * 20}%);
+    
+    function slide() {
+        current = (current + 1) % 5;
+        track.style.transform = translateX(-${current * 20}%);
     }
 
-    // Har 3.5 second mein feedback automatically badlega
-    setInterval(nextSlide, 3500);
+    // Har 3.5 second mein slide change hogi
+    setInterval(slide, 3500);
 });
