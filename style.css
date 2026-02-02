@@ -17,3 +17,22 @@ body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; text-a
 .slider-track img { width: 20%; height: 100%; object-fit: contain; background: #000; }
 footer { position: fixed; bottom: 0; width: 100%; background: #d4af37; padding: 20px; z-index: 1000; }
 .wa-btn { text-decoration: none; color: #000; font-weight: 900; font-size: 1.2rem; display: block; }
+/* Website khulte hi upar se niche aane wala animation */
+.container {
+    animation: fadeInPage 1.2s ease-out;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gold text chamakne wala animation */
+.gold-text {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #d4af37; }
+    to { text-shadow: 0 0 25px #f1d56e, 0 0 35px #d4af37; }
+             }
