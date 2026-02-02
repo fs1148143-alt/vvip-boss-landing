@@ -1,82 +1,59 @@
-:root { --gold: #d4af37; --bg: #050505; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', sans-serif; }
 
-body { 
-    background-color: var(--bg); 
-    color: #fff; 
-    font-family: 'Montserrat', sans-serif; 
-    overflow-x: hidden;
-}
+body { background-color: #f5f5f5; color: #333; overflow-x: hidden; }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle at center, #111 0%, #000 100%);
     text-align: center;
+    background: #ffffff;
 }
 
-.glow-text {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
-    color: var(--gold);
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-    margin-bottom: 10px;
-}
+.main-title { font-size: 4rem; font-weight: 900; letter-spacing: -2px; color: #111; }
 
-.floating-icon {
-    font-size: 5rem;
-    margin: 30px;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-/* Content Container */
-.container { padding: 40px 20px; max-width: 500px; margin: auto; }
-
-.premium-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 30px;
-    padding: 40px 20px;
-    margin-bottom: 40px;
-    text-align: center;
-    transition: 0.5s;
-    opacity: 0; /* JS handle karega */
-    transform: translateY(30px);
-}
-
-.icon-circle {
-    width: 70px;
-    height: 70px;
-    border: 2px solid var(--gold);
-    border-radius: 50%;
+/* DUMBBELL DESIGN (No Emoji) */
+.dumbbell-container {
+    margin: 50px 0;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 1.8rem;
-    color: var(--gold);
+    transition: transform 0.1s ease-out; /* Scroll pe zoom hone ke liye */
 }
 
-.gold-btn {
+.bar { width: 120px; height: 10px; background: #333; border-radius: 5px; }
+.weight { width: 30px; height: 60px; background: #555; border-radius: 5px; position: absolute; }
+.left-w { left: -15px; }
+.right-w { right: -15px; }
+
+/* CARDS */
+.content { padding: 100px 20px; background: #f5f5f5; }
+
+.info-card {
+    background: #ffffff;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.8s all ease;
+}
+
+.info-card.show { opacity: 1; transform: translateY(0); }
+
+.info-card h2 { margin-bottom: 15px; color: #000; font-size: 1.8rem; }
+
+.cta-btn {
     display: inline-block;
-    background: linear-gradient(45deg, #d4af37, #f1d56e);
-    color: #000;
-    padding: 18px 40px;
-    border-radius: 50px;
+    margin-top: 40px;
+    padding: 20px 50px;
+    background: #000;
+    color: #fff;
     text-decoration: none;
+    border-radius: 50px;
     font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    transition: 0.3s;
 }
-
-/* Animation Class for JS */
-.active { opacity: 1; transform: translateY(0); }
