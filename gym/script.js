@@ -1,18 +1,17 @@
-window.addEventListener('scroll', reveal);
-
-function reveal() {
-    var reveals = document.querySelectorAll('.reveal, .premium-card');
+window.addEventListener('scroll', function() {
+    let scrollPos = window.scrollY;
     
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var revealTop = reveals[i].getBoundingClientRect().top;
-        var revealPoint = 150;
+    // Dumbbell Zoom Logic: Jaise scroll karoge, scale badhega
+    let dumbbell = document.getElementById('db-anim');
+    let scaleVal = 1 + (scrollPos / 500); // Har scroll pe bada hoga
+    dumbbell.style.transform = scale(${scaleVal});
 
-        if (revealTop < windowHeight - revealPoint) {
-            reveals[i].classList.add('active');
+    // Cards Reveal Logic
+    let cards = document.querySelectorAll('.info-card');
+    cards.forEach(card => {
+        let cardPos = card.getBoundingClientRect().top;
+        if(cardPos < window.innerHeight - 100) {
+            card.classList.add('show');
         }
-    }
-}
-
-// Pehli baar load hone par bhi check karega
-window.onload = reveal;
+    });
+});
