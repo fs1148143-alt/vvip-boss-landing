@@ -1,17 +1,30 @@
-window.addEventListener('scroll', function() {
-    let scrollPos = window.scrollY;
-    
-    // Dumbbell Zoom Logic: Jaise scroll karoge, scale badhega
-    let dumbbell = document.getElementById('db-anim');
-    let scaleVal = 1 + (scrollPos / 500); // Har scroll pe bada hoga
-    dumbbell.style.transform = scale(${scaleVal});
+// Register GSAP Plugin
+gsap.registerPlugin(ScrollTrigger);
 
-    // Cards Reveal Logic
-    let cards = document.querySelectorAll('.info-card');
-    cards.forEach(card => {
-        let cardPos = card.getBoundingClientRect().top;
-        if(cardPos < window.innerHeight - 100) {
-            card.classList.add('show');
-        }
+// 1. Dumbbell Scroll & Zoom Animation
+gsap.to("#db-img", {
+    scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1 // Smooth scroll follow
+    },
+    y: 500,        // Niche move hoga
+    scale: 2,      // Bada (Zoom) hoga
+    rotate: 45     // Thoda ghumega
+});
+
+// 2. Text Reveal Animation
+gsap.utils.toArray(".reveal-box").forEach(box => {
+    gsap.to(box, {
+        scrollTrigger: {
+            trigger: box,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power4.out"
     });
 });
