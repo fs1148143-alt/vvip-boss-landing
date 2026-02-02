@@ -1,59 +1,57 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { background-color: #f5f5f5; color: #333; overflow-x: hidden; }
+body { 
+    background-color: #f0f0f0; 
+    color: #111; 
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
 
 .hero {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background: #ffffff;
-}
-
-.main-title { font-size: 4rem; font-weight: 900; letter-spacing: -2px; color: #111; }
-
-/* DUMBBELL DESIGN (No Emoji) */
-.dumbbell-container {
-    margin: 50px 0;
     position: relative;
-    display: flex;
-    align-items: center;
-    transition: transform 0.1s ease-out; /* Scroll pe zoom hone ke liye */
+    background: #fff;
 }
 
-.bar { width: 120px; height: 10px; background: #333; border-radius: 5px; }
-.weight { width: 30px; height: 60px; background: #555; border-radius: 5px; position: absolute; }
-.left-w { left: -15px; }
-.right-w { right: -15px; }
+.main-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 10vw;
+    line-height: 0.9;
+    text-align: center;
+    z-index: 1;
+    color: #e0e0e0; /* Grey text */
+}
 
-/* CARDS */
-.content { padding: 100px 20px; background: #f5f5f5; }
+.scroll-dumbbell {
+    position: absolute;
+    width: 300px;
+    z-index: 2;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.2));
+}
 
-.info-card {
-    background: #ffffff;
-    padding: 40px;
-    margin-bottom: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transform: translateY(50px);
+.content {
+    padding: 100px 20px;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+.reveal-box {
+    margin-bottom: 150px;
     opacity: 0;
-    transition: 0.8s all ease;
+    transform: translateY(100px);
 }
 
-.info-card.show { opacity: 1; transform: translateY(0); }
-
-.info-card h2 { margin-bottom: 15px; color: #000; font-size: 1.8rem; }
+.reveal-box h2 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; }
 
 .cta-btn {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 20px 50px;
+    padding: 20px 60px;
     background: #000;
     color: #fff;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 100px;
     font-weight: bold;
-    transition: 0.3s;
+    font-size: 1.2rem;
 }
