@@ -1,8 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     let current = 0;
     const track = document.getElementById('slider');
-    setInterval(() => {
-        current = (current + 1) % 5;
+    const totalSlides = 5;
+
+    function moveSlider() {
+        current++;
+        if (current >= totalSlides) {
+            current = 0;
+        }
+        // Smooth sliding logic
+        track.style.transition = "transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)";
         track.style.transform = translateX(-${current * 20}%);
-    }, 3500);
+    }
+
+    // Har 3 second mein photo change hogi
+    setInterval(moveSlider, 3000);
 });
