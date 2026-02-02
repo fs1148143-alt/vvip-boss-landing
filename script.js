@@ -3,16 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('slider');
     const totalSlides = 5;
 
-    function moveSlider() {
-        current++;
-        if (current >= totalSlides) {
-            current = 0;
-        }
-        // Smooth sliding logic
-        track.style.transition = "transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)";
+    function autoSlide() {
+        current = (current + 1) % totalSlides;
+        // 20% shift for 5 images (100 / 5 = 20)
         track.style.transform = translateX(-${current * 20}%);
     }
 
-    // Har 3 second mein photo change hogi
-    setInterval(moveSlider, 3000);
+    // Har 3 second mein slide badlega
+    setInterval(autoSlide, 3000);
 });
