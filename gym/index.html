@@ -1,38 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>IRON EMPIRE | Pro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRON EMPIRE | Ultra Pro</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <style>
-        body { background: #000; color: #fff; margin: 0; font-family: sans-serif; overflow-x: hidden; }
-        #db { position: fixed; top: 50%; left: 50%; width: 250px; transform: translate(-50%, -50%); z-index: 100; pointer-events: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
+        
+        /* Floating Dumbbell - Isko hamesha screen pe rakhne ke liye fixed kiya hai */
+        #db-pro {
+            position: fixed; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px; z-index: 100; pointer-events: none;
+        }
+
+        /* Container jo side-by-side sections rakhega */
         .wrapper { display: flex; width: 300vw; height: 100vh; }
-        .page { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        h1 { font-size: 15vw; color: #151515; text-transform: uppercase; font-weight: 900; }
-        .circles { display: flex; gap: 40px; }
-        .c { width: 120px; height: 120px; border: 2px solid #333; border-radius: 50%; }
-        .card { background: #111; padding: 50px; border: 1px solid #222; border-radius: 20px; text-align: center; }
+        
+        .panel { 
+            width: 100vw; height: 100vh; display: flex; 
+            align-items: center; justify-content: center; flex-shrink: 0; 
+        }
+
+        h1 { font-size: 15vw; color: #111; text-transform: uppercase; font-weight: 900; }
+
+        .circles { display: flex; gap: 50px; }
+        .c { 
+            width: 140px; height: 140px; border: 1px solid #333; 
+            border-radius: 50%; background: #080808; 
+        }
+
+        .card { 
+            background: #111; padding: 50px; border: 1px solid #222; 
+            border-radius: 20px; text-align: center; width: 350px;
+        }
     </style>
 </head>
 <body>
-    <img src="https://pngimg.com/uploads/dumbbell/dumbbell_PNG16383.png" id="db">
+
+    <img src="https://pngimg.com/uploads/dumbbell/dumbbell_PNG16383.png" id="db-pro">
+
     <div class="wrapper">
-        <section class="page"><h1>BEAST</h1></section>
-        <section class="page"><div class="circles"><div class="c"></div><div class="c"></div><div class="c"></div></div></section>
-        <section class="page"><div class="card"><h2>GYM PLAN</h2><p>₹2,500/Month</p></div></section>
+        <section class="panel"><h1>BEAST</h1></section>
+        
+        <section class="panel">
+            <div class="circles">
+                <div class="c"></div>
+                <div class="c"></div>
+                <div class="c"></div>
+            </div>
+        </section>
+        
+        <section class="panel">
+            <div class="card">
+                <h2>GYM PLAN</h2>
+                <p>₹2,500 / MONTH</p>
+                <div style="margin-top:20px; padding:10px; background:#fff; color:#000; font-weight:bold; cursor:pointer;">JOIN NOW</div>
+            </div>
+        </section>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
+        // JS Code ko head se hata kar body ke end mein dala hai taki fast load ho
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".wrapper", {
-            xPercent: -66.6,
+
+        let sections = gsap.utils.toArray(".panel");
+
+        // Horizontal Scroll Animation
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
             ease: "none",
-            scrollTrigger: { trigger: ".wrapper", pin: true, scrub: 1, end: "+=3000" }
+            scrollTrigger: {
+                trigger: ".wrapper",
+                pin: true,
+                scrub: 1,
+                // End value ko thoda lamba rakha hai taki smooth scroll ho
+                end: () => "+=" + document.querySelector(".wrapper").offsetWidth
+            }
         });
-        gsap.to("#db", {
-            scrollTrigger: { trigger: ".wrapper", scrub: 1 },
-            rotation: 360, x: "20vw", scale: 0.7
+
+        // Dumbbell Rotation Animation
+        gsap.to("#db-pro", {
+            scrollTrigger: {
+                trigger: ".wrapper",
+                scrub: 1,
+                start: "top top",
+                end: "bottom bottom"
+            },
+            rotation: 360,
+            scale: 0.6,
+            x: "20vw" // Scroll karte hi dumbbell side mein jayega
         });
     </script>
 </body>
