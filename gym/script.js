@@ -1,28 +1,20 @@
 gsap.registerPlugin(ScrollTrigger);
 
-let panels = gsap.utils.toArray(".panel");
+let sections = gsap.utils.toArray(".panel");
 
-// 1. Nike Style Horizontal Scroll
-gsap.to(panels, {
-    xPercent: -100 * (panels.length - 1),
+gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
     ease: "none",
     scrollTrigger: {
-        trigger: ".scroll-container",
+        trigger: ".wrapper",
         pin: true,
         scrub: 1,
-        end: "+=3000"
+        end: "+=2000"
     }
 });
 
-// 2. Aesthetic Asset Motion
-gsap.to("#main-asset", {
-    scrollTrigger: {
-        trigger: ".scroll-container",
-        scrub: 1.5,
-        start: "top top",
-        end: "bottom bottom"
-    },
-    y: "-=100",
-    rotation: 45,
-    scale: 1.2
-});
+gsap.timeline({
+    scrollTrigger: { trigger: ".wrapper", scrub: 1, start: "top top", end: "bottom bottom" }
+})
+.to("#db-pro", { rotation: 360, x: "-25vw", scale: 0.7 })
+.to("#db-pro", { rotation: 720, x: "25vw", y: "-10vh", scale: 1 });
