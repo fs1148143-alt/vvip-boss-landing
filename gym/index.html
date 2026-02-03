@@ -3,58 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRON EMPIRE | Interactive</title>
+    <title>IRON EMPIRE | Official</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-    <section class="hero">
-        <h1 class="main-title">IRON EMPIRE</h1>
-        <img src="https://pngimg.com/uploads/dumbbell/dumbbell_PNG16383.png" class="hero-db" id="moving-db">
-    </section>
+    <img src="https://pngimg.com/uploads/dumbbell/dumbbell_PNG16383.png" class="db-main" id="db">
 
-    <section class="features">
-        <div class="circle-container">
-            <div class="feature-item">
-                <div class="circle" id="target-circle">
+    <div class="horizontal-container">
+        <section class="panel hero">
+            <h1>IRON<br>EMPIRE</h1>
+        </section>
+
+        <section class="panel circles-area">
+            <div class="circle-row">
+                <div class="circle-item" data-name="PROTEIN"><div class="circle"></div></div>
+                <div class="circle-item active" data-name="WORKOUT"><div class="circle"></div></div>
+                <div class="circle-item" data-name="ELITE"><div class="circle"></div></div>
+            </div>
+        </section>
+
+        <section class="panel info-area">
+            <div class="details-box">
+                <div class="box-header">GYM OVERVIEW</div>
+                <div class="box-body">
+                    <h2>TRANSFORM YOUR LIFE</h2>
+                    <p>Iron Empire sirf ek gym nahi, ek revolution hai. Hum provide karte hain world-class equipment aur expert trainers jo aapke fitness goal ko achieve karne mein help karenge.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-point"><strong>TIMING:</strong> 5 AM - 11 PM</div>
+                        <div class="info-point"><strong>LOCATION:</strong> Main Market, Kolhapur</div>
+                        <div class="info-point"><strong>FEES:</strong> ₹2,500/Month</div>
                     </div>
-                <p>BARBELLS</p>
-            </div>
-            <div class="feature-item">
-                <div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/69/69840.png" class="icon-small"></div>
-                <p>BOTTLE</p>
-            </div>
-            <div class="feature-item">
-                <div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/2862/2862662.png" class="icon-small"></div>
-                <p>CROSSFIT</p>
-            </div>
-            <div class="feature-item">
-                <div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/10/10699.png" class="icon-small"></div>
-                <p>DANCE</p>
-            </div>
-        </div>
-    </section>
 
-    <section class="script-section">
-        <div class="script-box">
-            <h3>GYM PLAN SCRIPT</h3>
-            <pre>
-{
-  "plan": "Elite Transformation",
-  "focus": "Muscle Gain",
-  "intensity": "4K Ultra",
-  "status": "Ready to Lift"
-}
-            </pre>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>2026 IRON EMPIRE. All rights reserved.</p>
-    </footer>
+                    <a href="https://wa.me/918237159087" class="join-btn">WHATSAPP US</a>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
-        </html>
+    </html>
