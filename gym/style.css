@@ -1,9 +1,33 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
-.wrapper { display: flex; width: 300%; height: 100vh; }
-.panel { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-h1 { font-size: 8vw; color: #222; }
-.circles { display: flex; gap: 50px; }
-.c { width: 120px; height: 120px; border: 2px solid #333; border-radius: 50%; background: #0a0a0a; position: relative; }
-.c::after { content: attr(data-t); position: absolute; bottom: -30px; width: 100%; text-align: center; color: #444; font-size: 12px; }
-.card { background: #111; padding: 50px; border: 1px solid #222; border-radius: 20px; text-align: center; }
+
+#db-pro {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; z-index: 100; pointer-events: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: nowrap; /* Ye zaroori hai side-by-side ke liye */
+    width: 300vw; /* 3 Full screens */
+    height: 100vh;
+}
+
+.panel {
+    width: 100vw; /* Har section puri screen lega */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Isse section chota nahi hoga */
+}
+
+h1 { font-size: 8vw; color: #1a1a1a; text-transform: uppercase; }
+
+.circles-container { display: flex; gap: 40px; }
+.c { width: 120px; height: 120px; border: 2px solid #333; border-radius: 50%; background: #080808; position: relative; }
+.c::after { content: attr(data-t); position: absolute; bottom: -30px; width: 100%; text-align: center; color: #555; font-size: 12px; }
+
+.info-card { background: #111; padding: 40px; border: 1px solid #222; border-radius: 20px; text-align: center; width: 300px; }
+.btn { margin-top: 20px; padding: 10px 20px; background: #fff; border: none; font-weight: bold; cursor: pointer; }
