@@ -1,38 +1,17 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+body { background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
 
-/* Fixed Aesthetic Element */
-.floating-asset {
-    position: fixed; top: 50%; right: 10%;
-    transform: translateY(-50%);
-    width: 250px; z-index: 10; pointer-events: none;
-    filter: drop-shadow(0 0 30px rgba(255,255,255,0.05));
-}
-.floating-asset img { width: 100%; height: auto; }
+.db-main { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 180px; z-index: 100; }
 
-/* Horizontal Layout */
-.scroll-container { display: flex; width: 300%; height: 100vh; }
-.panel { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; flex-shrink: 0; }
+.wrapper { display: flex; width: 300%; height: 100vh; }
+.panel { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-.nike-text { font-family: 'Syncopate'; font-size: 12vw; line-height: 0.9; letter-spacing: -5px; color: #111; }
+h1 { font-size: 10vw; color: #111; text-transform: uppercase; }
 
-/* Grid Styling */
-.aesthetic-grid { display: flex; gap: 40px; }
-.item { text-align: center; opacity: 0.3; transition: 0.5s; }
-.item.active { opacity: 1; }
-.dot { width: 80px; height: 80px; border: 1px solid #333; border-radius: 50%; margin-bottom: 15px; }
-.item span { font-size: 0.7rem; letter-spacing: 2px; color: #666; }
+.circles { display: flex; gap: 40px; }
+.c { width: 100px; height: 100px; border: 1px solid #333; border-radius: 50%; background: #0a0a0a; position: relative; }
+.c::after { content: attr(data-t); position: absolute; bottom: -25px; font-size: 10px; width: 100%; text-align: center; color: #555; }
 
-/* Nike Card Style */
-.nike-card { background: #0a0a0a; padding: 40px; border-radius: 2px; width: 100%; max-width: 400px; border: 1px solid #1a1a1a; }
-.category { font-size: 0.7rem; letter-spacing: 2px; color: #555; margin-bottom: 10px; }
-.nike-card h2 { font-family: 'Syncopate'; font-size: 2rem; margin-bottom: 20px; }
-.specs { font-size: 0.9rem; color: #888; margin-bottom: 20px; line-height: 2; }
-.price { font-size: 1.5rem; font-weight: 900; margin-bottom: 30px; }
-.shop-btn { background: #fff; color: #000; text-decoration: none; padding: 15px 40px; display: inline-block; font-weight: 900; border-radius: 50px; }
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-    .floating-asset { width: 150px; right: 5%; }
-    .nike-text { font-size: 18vw; }
-}
+.card { background: #111; padding: 40px; border-radius: 15px; border: 1px solid #222; text-align: center; }
+.card h2 { margin-bottom: 10px; }
+.btn { display: inline-block; margin-top: 20px; padding: 10px 25px; background: #fff; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; }
