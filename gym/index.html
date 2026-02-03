@@ -8,32 +8,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
+        body { background: #000; color: #fff; font-family: 'Arial Black', sans-serif; overflow-x: hidden; }
 
-        /* Floating Hero Image (Aapki Pehli Photo) */
+        /* Floating Hero Image - Beech mein rahegi ghumne ke liye */
         #hero-img {
             position: fixed; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 70%; max-width: 400px; z-index: 100;
+            width: 80%; max-width: 350px; z-index: 100;
             pointer-events: none;
-            filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));
+            filter: drop-shadow(0 0 30px rgba(255,255,255,0.3));
         }
 
-        section { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; }
+        section { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; overflow: hidden; }
 
-        /* Background Text */
-        .bg-text { font-size: 15vw; color: #111; font-weight: 900; text-transform: uppercase; position: absolute; z-index: 1; }
+        .bg-text { font-size: 18vw; color: #111; font-weight: 900; position: absolute; z-index: 1; text-transform: uppercase; }
 
-        /* Content Boxes */
-        .content { z-index: 10; background: rgba(0,0,0,0.8); padding: 30px; border: 1px solid #333; border-radius: 15px; text-align: center; max-width: 90%; }
+        .content { z-index: 10; background: rgba(0,0,0,0.85); padding: 30px; border: 1px solid #333; border-radius: 20px; text-align: center; max-width: 320px; backdrop-filter: blur(10px); }
         
         /* Background Images for sections */
-        .bg-img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.3; z-index: 0; }
+        .bg-img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.4; z-index: 0; }
 
-        @media (max-width: 768px) {
-            .bg-text { font-size: 20vw; }
-            #hero-img { width: 60%; }
-        }
+        .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: #fff; color: #000; text-decoration: none; font-weight: bold; border-radius: 50px; }
     </style>
 </head>
 <body>
@@ -47,16 +42,16 @@
     <section>
         <img src="IMG-20250908-WA0052.jpg" class="bg-img">
         <div class="content">
-            <h2>ELITE TRAINING</h2>
-            <p>Har device pe chalne wala premium look.</p>
+            <h2>ELITE STYLE</h2>
+            <p>Design that works on every device.</p>
         </div>
     </section>
 
     <section>
         <img src="IMG-20250908-WA0042.jpg" class="bg-img">
         <div class="content">
-            <h2>NIKE STYLE</h2>
-            <p>Scroll karke dekho jadu!</p>
+            <h2>VVIP BOSS</h2>
+            <p>Premium Gym Experience.</p>
         </div>
     </section>
 
@@ -64,26 +59,30 @@
         <img src="IMG-20250908-WA0026.jpg" class="bg-img">
         <div class="content">
             <h1>JOIN NOW</h1>
-            <button style="margin-top:15px; padding:10px 20px; cursor:pointer;">START JOURNEY</button>
+            <a href="#" class="btn">START NOW</a>
         </div>
     </section>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Hero Image Animation (Rotate + Scale)
+        // Hero Image: Rotation + Scaling on Scroll
         gsap.to("#hero-img", {
-            scrollTrigger: { trigger: "body", start: "top top", end: "bottom bottom", scrub: 1 },
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1
+            },
             rotation: 360,
-            scale: 0.5,
-            opacity: 0.8
+            scale: 0.6
         });
 
-        // Background Text Movement
+        // Background Text Parallax
         gsap.to(".bg-text", {
             scrollTrigger: { trigger: "body", scrub: 1 },
-            x: -200,
-            opacity: 0.2
+            y: -150,
+            opacity: 0.1
         });
     </script>
 </body>
