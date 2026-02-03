@@ -4,86 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRON EMPIRE | VVIP BOSS</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: 'Arial Black', sans-serif; overflow-x: hidden; }
-
-        /* Floating Hero Image - Beech mein rahegi ghumne ke liye */
-        #hero-img {
-            position: fixed; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%; max-width: 350px; z-index: 100;
-            pointer-events: none;
-            filter: drop-shadow(0 0 30px rgba(255,255,255,0.3));
-        }
-
-        section { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; overflow: hidden; }
-
-        .bg-text { font-size: 18vw; color: #111; font-weight: 900; position: absolute; z-index: 1; text-transform: uppercase; }
-
-        .content { z-index: 10; background: rgba(0,0,0,0.85); padding: 30px; border: 1px solid #333; border-radius: 20px; text-align: center; max-width: 320px; backdrop-filter: blur(10px); }
-        
-        /* Background Images for sections */
-        .bg-img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.4; z-index: 0; }
-
-        .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: #fff; color: #000; text-decoration: none; font-weight: bold; border-radius: 50px; }
-    </style>
-</head>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
 
     <img src="IMG-20250908-WA0062.jpg" id="hero-img">
 
-    <section>
+    <section id="s1">
         <h1 class="bg-text">POWER</h1>
     </section>
 
-    <section>
+    <section id="s2">
         <img src="IMG-20250908-WA0052.jpg" class="bg-img">
         <div class="content">
             <h2>ELITE STYLE</h2>
-            <p>Design that works on every device.</p>
+            <p>Built for the Best.</p>
         </div>
     </section>
 
-    <section>
+    <section id="s3">
         <img src="IMG-20250908-WA0042.jpg" class="bg-img">
         <div class="content">
-            <h2>VVIP BOSS</h2>
-            <p>Premium Gym Experience.</p>
-        </div>
-    </section>
-
-    <section>
-        <img src="IMG-20250908-WA0026.jpg" class="bg-img">
-        <div class="content">
             <h1>JOIN NOW</h1>
-            <a href="#" class="btn">START NOW</a>
+            <button class="btn">START</button>
         </div>
     </section>
 
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Hero Image: Rotation + Scaling on Scroll
-        gsap.to("#hero-img", {
-            scrollTrigger: {
-                trigger: "body",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1
-            },
-            rotation: 360,
-            scale: 0.6
-        });
-
-        // Background Text Parallax
-        gsap.to(".bg-text", {
-            scrollTrigger: { trigger: "body", scrub: 1 },
-            y: -150,
-            opacity: 0.1
-        });
-    </script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script> </body>
 </html>
