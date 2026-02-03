@@ -1,28 +1,29 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// 1. Dumbbell Movement: Scroll pe ghumna aur thoda niche aana
-gsap.to("#main-dumbbell", {
+// Dumbbell movement logic
+gsap.to("#moving-db", {
     scrollTrigger: {
-        trigger: "body",
+        trigger: ".hero",
         start: "top top",
-        end: "bottom bottom",
-        scrub: 1 // Ye hi makkhan scrolling ka raaz hai
+        end: "bottom center",
+        scrub: 1, // Smooth scrolling
     },
-    rotation: 400,
-    y: 300,
-    scale: 1.2
+    // Target circle ki location pe bhejna
+    y: "125vh", 
+    scale: 0.4, 
+    rotate: 360,
+    ease: "power1.inOut"
 });
 
-// 2. Content Reveal: Ek-ek karke cards ka aana
-gsap.utils.toArray(".reveal").forEach(el => {
-    gsap.to(el, {
-        scrollTrigger: {
-            trigger: el,
-            start: "top 70%",
-        },
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out"
-    });
+// Circles reveal animation
+gsap.from(".circle", {
+    scrollTrigger: {
+        trigger: ".features",
+        start: "top 80%",
+    },
+    scale: 0,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "back.out(1.7)"
 });
