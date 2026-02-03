@@ -3,40 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRON EMPIRE | Ultra Aesthetic</title>
+    <title>IRON EMPIRE | Aesthetic</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-    <img src="https://pngimg.com/uploads/dumbbell/dumbbell_PNG16377.png" class="floating-obj" id="main-obj">
+    <div class="floating-asset" id="main-asset">
+        <img src="https://images.squarespace-cdn.com/content/v1/596f947e29687f8773c3cb26/1503348122393-2U0L1B40A5D6Y4XQY6XW/shaker.png" alt="Shaker">
+    </div>
 
-    <div class="scroller">
-        <section class="screen">
-            <h1 class="logo-text">IRON<br>EMPIRE</h1>
+    <div class="scroll-container">
+        <section class="panel hero">
+            <h1 class="nike-text">BUILT<br>TO LEAD.</h1>
         </section>
 
-        <section class="screen">
-            <div class="circle-group">
-                <div class="circle-box" data-label="ELITE"><div class="dot"></div></div>
-                <div class="circle-box active" data-label="STRENGTH"><div class="dot"></div></div>
-                <div class="circle-box" data-label="CARDIO"><div class="dot"></div></div>
+        <section class="panel grid-section">
+            <div class="aesthetic-grid">
+                <div class="item"><div class="dot"></div><span>BOTTLE</span></div>
+                <div class="item active"><div class="dot"></div><span>ELITE</span></div>
+                <div class="item"><div class="dot"></div><span>CARDIO</span></div>
             </div>
         </section>
 
-        <section class="screen">
-            <div class="glass-card">
-                <span class="tag">PREMIUM CLUB</span>
-                <h2>GYM PLAN</h2>
-                <div class="details">
-                    <p>MORN: 5AM - 11AM</p>
-                    <p>EVEN: 4PM - 10PM</p>
-                    <div class="line"></div>
-                    <p class="price">₹2,500<span> / month</span></p>
+        <section class="panel card-section">
+            <div class="nike-card">
+                <p class="category">PREMIUM MEMBERSHIP</p>
+                <h2>THE BEAST PLAN</h2>
+                <div class="specs">
+                    <p>Timing: <strong>5AM - 11PM</strong></p>
+                    <p>Access: <strong>Full Studio</strong></p>
                 </div>
-                <a href="https://wa.me/918237159087" class="btn">BOOK NOW</a>
+                <p class="price">₹2,500 / mo</p>
+                <a href="https://wa.me/918237159087" class="shop-btn">JOIN NOW</a>
             </div>
         </section>
     </div>
