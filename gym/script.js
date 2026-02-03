@@ -1,30 +1,28 @@
-// Register GSAP Plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// 1. Dumbbell Scroll & Zoom Animation
-gsap.to("#db-img", {
+// 1. Dumbbell Movement: Scroll pe ghumna aur thoda niche aana
+gsap.to("#main-dumbbell", {
     scrollTrigger: {
-        trigger: ".hero",
+        trigger: "body",
         start: "top top",
-        end: "bottom top",
-        scrub: 1 // Smooth scroll follow
+        end: "bottom bottom",
+        scrub: 1 // Ye hi makkhan scrolling ka raaz hai
     },
-    y: 500,        // Niche move hoga
-    scale: 2,      // Bada (Zoom) hoga
-    rotate: 45     // Thoda ghumega
+    rotation: 400,
+    y: 300,
+    scale: 1.2
 });
 
-// 2. Text Reveal Animation
-gsap.utils.toArray(".reveal-box").forEach(box => {
-    gsap.to(box, {
+// 2. Content Reveal: Ek-ek karke cards ka aana
+gsap.utils.toArray(".reveal").forEach(el => {
+    gsap.to(el, {
         scrollTrigger: {
-            trigger: box,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
+            trigger: el,
+            start: "top 70%",
         },
         opacity: 1,
         y: 0,
         duration: 1.2,
-        ease: "power4.out"
+        ease: "power3.out"
     });
 });
