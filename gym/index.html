@@ -3,41 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRON EMPIRE | 4K Smooth</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <title>IRON EMPIRE | Interactive</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="db-wrapper">
-        <img src="https://pngimg.com/uploads/dumbbell/dumbbell_PNG16383.png" class="db-image" id="main-dumbbell">
-    </div>
-
-    <section class="panel hero">
-        <h1 class="hero-title">IRON<br>EMPIRE</h1>
+    <section class="hero">
+        <h1 class="main-title">IRON EMPIRE</h1>
+        <img src="https://pngimg.com/uploads/dumbbell/dumbbell_PNG16383.png" class="hero-db" id="moving-db">
     </section>
 
-    <section class="panel gray">
-        <div class="content reveal">
-            <h2>THE STUDIO</h2>
-            <p>Video jaisa smooth experience ab aapki website par. Hum focus karte hain premium training aur world-class atmosphere par.</p>
+    <section class="features">
+        <div class="circle-container">
+            <div class="feature-item">
+                <div class="circle" id="target-circle">
+                    </div>
+                <p>BARBELLS</p>
+            </div>
+            <div class="feature-item">
+                <div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/69/69840.png" class="icon-small"></div>
+                <p>BOTTLE</p>
+            </div>
+            <div class="feature-item">
+                <div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/2862/2862662.png" class="icon-small"></div>
+                <p>CROSSFIT</p>
+            </div>
+            <div class="feature-item">
+                <div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/10/10699.png" class="icon-small"></div>
+                <p>DANCE</p>
+            </div>
         </div>
     </section>
 
-    <section class="panel">
-        <div class="content reveal">
-            <h2>MEMBERSHIP</h2>
-            <table class="pricing-table">
-                <tr><td>BASIC (1 MONTH)</td><td class="price">₹2,500</td></tr>
-                <tr><td>PRO (3 MONTHS)</td><td class="price">₹6,500</td></tr>
-                <tr><td>ELITE (1 YEAR)</td><td class="price">₹18,000</td></tr>
-            </table>
-            <a href="https://wa.me/918237159087" class="btn">WHATSAPP US</a>
+    <section class="script-section">
+        <div class="script-box">
+            <h3>GYM PLAN SCRIPT</h3>
+            <pre>
+{
+  "plan": "Elite Transformation",
+  "focus": "Muscle Gain",
+  "intensity": "4K Ultra",
+  "status": "Ready to Lift"
+}
+            </pre>
         </div>
     </section>
+
+    <footer class="footer">
+        <p>2026 IRON EMPIRE. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-    </html>
+        </html>
