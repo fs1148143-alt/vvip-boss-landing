@@ -3,95 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRON EMPIRE | VVIP</title>
+    <title>AMBER | Premium Lighting</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: 'Arial Black', sans-serif; }
-        
-        /* Floating Dumbbell - Isko beech mein rakha hai */
-        #db-pro {
+        body { background: #0b0b0b; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        /* Navigation Bar */
+        nav { position: fixed; top: 0; width: 100%; padding: 20px; display: flex; justify-content: space-between; z-index: 1000; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); }
+        .logo { font-weight: bold; letter-spacing: 2px; }
+
+        /* Main Floating Light (Video jaisa) */
+        #main-light {
             position: fixed; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 200px; z-index: 100; pointer-events: none;
-            transition: 0.3s ease;
+            width: 300px; z-index: 100; pointer-events: none;
         }
 
-        section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-bottom: 1px solid #111;
-        }
+        /* Full Screen Sections */
+        section { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; text-align: center; }
 
-        .title { font-size: 12vw; color: #1a1a1a; letter-spacing: -5px; }
+        .hero-text { font-size: 10vw; color: #222; font-weight: 900; line-height: 0.8; }
         
-        .info-card {
-            background: rgba(20, 20, 20, 0.8);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            border: 2px solid #333;
-            z-index: 10;
+        .content { z-index: 10; max-width: 600px; opacity: 0; transform: translateY(50px); }
+        .content h2 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        /* Responsive Settings: Mobile ke liye */
+        @media (max-width: 768px) {
+            #main-light { width: 180px; } /* Mobile pe light choti */
+            .hero-text { font-size: 15vw; }
+            .content h2 { font-size: 1.8rem; }
         }
 
-        .btn {
-            background: #fff; color: #000; padding: 15px 30px;
-            text-decoration: none; font-weight: bold; display: inline-block;
-            margin-top: 20px; border-radius: 50px;
-        }
+        .btn { padding: 12px 30px; border: 1px solid #fff; color: #fff; text-decoration: none; border-radius: 50px; display: inline-block; margin-top: 20px; transition: 0.3s; }
+        .btn:hover { background: #fff; color: #000; }
     </style>
 </head>
 <body>
 
-    <img src="https://pngimg.com/uploads/dumbbell/dumbbell_PNG16383.png" id="db-pro">
+    <nav><div class="logo">AMBER</div><div>Menu</div></nav>
 
-    <section id="s1">
-        <h1 class="title">POWER</h1>
+    <img src="https://pngimg.com/uploads/lamp/lamp_PNG611.png" id="main-light">
+
+    <section id="one">
+        <h1 class="hero-text">AMBER</h1>
     </section>
 
-    <section id="s2">
-        <div class="info-card">
-            <h2>ESTABLISHED 2026</h2>
-            <p>UNLEASH THE BEAST WITHIN</p>
+    <section id="two">
+        <div class="content">
+            <h2>Modern Lighting</h2>
+            <p>Where Light Belongs. Designed to live quietly in your space.</p>
+            <a href="#" class="btn">Explore</a>
         </div>
     </section>
 
-    <section id="s3">
-        <div class="info-card">
-            <h2>GYM PLAN</h2>
-            <h1>₹2,500</h1>
-            <a href="#" class="btn">JOIN THE EMPIRE</a>
+    <section id="three">
+        <div class="content">
+            <h2>Sexy on the Cover</h2>
+            <p>Premium aesthetics for your home decor.</p>
+            <a href="#" class="btn">Shop Now</a>
         </div>
     </section>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Dumbbell Animation: Scroll ke saath ghumega aur bada-chota hoga
-        gsap.to("#db-pro", {
+        // Light Animation: Scroll ke sath scale aur ghumna
+        gsap.to("#main-light", {
             scrollTrigger: {
-                trigger: "body",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1
+                trigger: "body", start: "top top", end: "bottom bottom", scrub: 1
             },
-            rotation: 720,
-            scale: 1.5,
-            filter: "drop-shadow(0 0 30px #fff)"
+            rotation: 20, scale: 1.4, filter: "drop-shadow(0 0 50px #ffaa00)"
         });
 
-        // Background Text Parallax
-        gsap.to(".title", {
-            scrollTrigger: {
-                trigger: "#s1",
-                scrub: 1
-            },
-            y: -200,
-            opacity: 0
+        // Content Fade In: Har section pe content upar aayega
+        gsap.utils.toArray(".content").forEach(content => {
+            gsap.to(content, {
+                scrollTrigger: {
+                    trigger: content, start: "top 80%", toggleActions: "play none none reverse"
+                },
+                opacity: 1, y: 0, duration: 1
+            });
         });
     </script>
 </body>
