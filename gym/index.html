@@ -3,88 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMBER | Premium Lighting</title>
+    <title>IRON EMPIRE | VVIP BOSS</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0b0b0b; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
 
-        /* Navigation Bar */
-        nav { position: fixed; top: 0; width: 100%; padding: 20px; display: flex; justify-content: space-between; z-index: 1000; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); }
-        .logo { font-weight: bold; letter-spacing: 2px; }
-
-        /* Main Floating Light (Video jaisa) */
-        #main-light {
+        /* Floating Hero Image (Aapki Pehli Photo) */
+        #hero-img {
             position: fixed; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px; z-index: 100; pointer-events: none;
+            width: 70%; max-width: 400px; z-index: 100;
+            pointer-events: none;
+            filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));
         }
 
-        /* Full Screen Sections */
-        section { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; text-align: center; }
+        section { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; }
 
-        .hero-text { font-size: 10vw; color: #222; font-weight: 900; line-height: 0.8; }
+        /* Background Text */
+        .bg-text { font-size: 15vw; color: #111; font-weight: 900; text-transform: uppercase; position: absolute; z-index: 1; }
+
+        /* Content Boxes */
+        .content { z-index: 10; background: rgba(0,0,0,0.8); padding: 30px; border: 1px solid #333; border-radius: 15px; text-align: center; max-width: 90%; }
         
-        .content { z-index: 10; max-width: 600px; opacity: 0; transform: translateY(50px); }
-        .content h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        /* Background Images for sections */
+        .bg-img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.3; z-index: 0; }
 
-        /* Responsive Settings: Mobile ke liye */
         @media (max-width: 768px) {
-            #main-light { width: 180px; } /* Mobile pe light choti */
-            .hero-text { font-size: 15vw; }
-            .content h2 { font-size: 1.8rem; }
+            .bg-text { font-size: 20vw; }
+            #hero-img { width: 60%; }
         }
-
-        .btn { padding: 12px 30px; border: 1px solid #fff; color: #fff; text-decoration: none; border-radius: 50px; display: inline-block; margin-top: 20px; transition: 0.3s; }
-        .btn:hover { background: #fff; color: #000; }
     </style>
 </head>
 <body>
 
-    <nav><div class="logo">AMBER</div><div>Menu</div></nav>
+    <img src="IMG-20250908-WA0062.jpg" id="hero-img">
 
-    <img src="https://pngimg.com/uploads/lamp/lamp_PNG611.png" id="main-light">
-
-    <section id="one">
-        <h1 class="hero-text">AMBER</h1>
+    <section>
+        <h1 class="bg-text">POWER</h1>
     </section>
 
-    <section id="two">
+    <section>
+        <img src="IMG-20250908-WA0052.jpg" class="bg-img">
         <div class="content">
-            <h2>Modern Lighting</h2>
-            <p>Where Light Belongs. Designed to live quietly in your space.</p>
-            <a href="#" class="btn">Explore</a>
+            <h2>ELITE TRAINING</h2>
+            <p>Har device pe chalne wala premium look.</p>
         </div>
     </section>
 
-    <section id="three">
+    <section>
+        <img src="IMG-20250908-WA0042.jpg" class="bg-img">
         <div class="content">
-            <h2>Sexy on the Cover</h2>
-            <p>Premium aesthetics for your home decor.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <h2>NIKE STYLE</h2>
+            <p>Scroll karke dekho jadu!</p>
+        </div>
+    </section>
+
+    <section>
+        <img src="IMG-20250908-WA0026.jpg" class="bg-img">
+        <div class="content">
+            <h1>JOIN NOW</h1>
+            <button style="margin-top:15px; padding:10px 20px; cursor:pointer;">START JOURNEY</button>
         </div>
     </section>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Light Animation: Scroll ke sath scale aur ghumna
-        gsap.to("#main-light", {
-            scrollTrigger: {
-                trigger: "body", start: "top top", end: "bottom bottom", scrub: 1
-            },
-            rotation: 20, scale: 1.4, filter: "drop-shadow(0 0 50px #ffaa00)"
+        // Hero Image Animation (Rotate + Scale)
+        gsap.to("#hero-img", {
+            scrollTrigger: { trigger: "body", start: "top top", end: "bottom bottom", scrub: 1 },
+            rotation: 360,
+            scale: 0.5,
+            opacity: 0.8
         });
 
-        // Content Fade In: Har section pe content upar aayega
-        gsap.utils.toArray(".content").forEach(content => {
-            gsap.to(content, {
-                scrollTrigger: {
-                    trigger: content, start: "top 80%", toggleActions: "play none none reverse"
-                },
-                opacity: 1, y: 0, duration: 1
-            });
+        // Background Text Movement
+        gsap.to(".bg-text", {
+            scrollTrigger: { trigger: "body", scrub: 1 },
+            x: -200,
+            opacity: 0.2
         });
     </script>
 </body>
